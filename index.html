@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>game_L903_reaction_dash - 光速タップ</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <header class="app-header">
+        <div>
+            <h1>光速タップ</h1>
+            <p>光ったパネルを素早く叩いて反応速度を縮めよう</p>
+        </div>
+        <div class="header-actions">
+            <button id="show-help">遊び方</button>
+            <a class="github-link" href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+    </header>
+
+    <main class="single-game-layout">
+        <section class="playground">
+            <div id="game-container" class="game-surface"></div>
+            <div id="game-panel" class="info-panel"></div>
+        </section>
+    </main>
+
+    <dialog id="help-dialog">
+        <h3>遊び方</h3>
+        <p>
+            スタートを押すとランダムなパネルが一定間隔で点灯します。<br />
+            点灯した番号と同じボタンを素早く押して、平均反応速度を縮めましょう。
+        </p>
+        <button id="close-help">閉じる</button>
+    </dialog>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
