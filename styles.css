@@ -26,6 +26,7 @@ body {
   background: radial-gradient(circle at top, rgba(14, 165, 233, 0.18), transparent 45%),
     radial-gradient(circle at bottom, rgba(59, 130, 246, 0.12), transparent 35%),
     #020617;
+  overflow-x: hidden;
 }
 
 button {
@@ -938,26 +939,32 @@ main.single-game-layout {
     0% {
       transform: translateX(0);
     }
+
     25% {
       transform: translateX(-8px) rotate(-5deg);
     }
+
     50% {
       transform: translateX(8px) rotate(5deg);
     }
+
     75% {
       transform: translateX(-4px) rotate(-2deg);
     }
+
     100% {
       transform: translateX(0) rotate(0);
     }
   }
 
   @keyframes enemy-pulse {
+
     0%,
     100% {
       transform: scale(1);
       filter: brightness(1);
     }
+
     50% {
       transform: scale(1.05);
       filter: brightness(1.2);
@@ -968,6 +975,7 @@ main.single-game-layout {
     0% {
       transform: translateX(-100%);
     }
+
     100% {
       transform: translateX(100%);
     }
@@ -1025,15 +1033,18 @@ main.single-game-layout {
 
     .app-header h1 {
       font-size: 1.8rem;
+      line-height: 1.2;
     }
 
     .app-header p {
       font-size: 0.9rem;
+      margin-top: 6px;
     }
 
     .header-actions {
       width: 100%;
       flex-wrap: wrap;
+      gap: 8px;
     }
 
     .header-actions button,
@@ -1041,7 +1052,8 @@ main.single-game-layout {
       flex: 1;
       min-width: 120px;
       font-size: 0.85rem;
-      padding: 8px 14px;
+      padding: 12px 16px;
+      min-height: 44px;
     }
 
     .game-surface,
@@ -1145,9 +1157,13 @@ main.single-game-layout {
     }
 
     .key-pill {
-      padding: 14px 8px;
+      padding: 16px 10px;
       font-size: 1.4rem;
       border-radius: 14px;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .game-controls.reactive {
@@ -1366,15 +1382,20 @@ main.single-game-layout {
     }
 
     .key-pill {
-      padding: 12px 6px;
-      font-size: 1.2rem;
+      padding: 14px 8px;
+      font-size: 1.3rem;
       border-radius: 12px;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .primary,
     .secondary {
       font-size: 0.9rem;
-      padding: 10px 16px;
+      padding: 12px 18px;
+      min-height: 44px;
     }
 
     .panel-head h3 {
