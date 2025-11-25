@@ -100,12 +100,16 @@ button:active {
 main.single-game-layout {
   max-width: 1180px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .playground {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
   gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .game-surface {
@@ -703,11 +707,40 @@ main.single-game-layout {
 
     .playground {
       grid-template-columns: 1fr;
+      gap: 16px;
     }
 
     .game-controls.reactive {
       flex-direction: column;
       align-items: stretch;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .playground {
+      gap: 14px;
+    }
+
+    .game-surface,
+    .info-panel {
+      padding: 20px;
+    }
+
+    .panel-head {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag-row {
+      width: 100%;
+    }
+
+    .enemy-battle-area {
+      padding: 16px;
+    }
+
+    .keypad-grid {
+      gap: 12px;
     }
   }
 
@@ -1060,6 +1093,8 @@ main.single-game-layout {
     .info-panel {
       padding: 16px;
       border-radius: 20px;
+      min-width: 0;
+      overflow: hidden;
     }
 
     .game-area {
@@ -1067,6 +1102,19 @@ main.single-game-layout {
       min-height: 300px;
       padding: 16px;
       gap: 16px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .reaction-hud {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .enemy-battle-area {
+      padding: 14px;
+      min-width: 0;
+      overflow: hidden;
     }
 
     .reaction-hud {
@@ -1290,30 +1338,54 @@ main.single-game-layout {
 
     .app-header h1 {
       font-size: 1.5rem;
+      word-break: break-word;
+    }
+
+    .app-header p {
+      font-size: 0.85rem;
+      word-break: break-word;
+    }
+
+    .playground {
+      gap: 12px;
     }
 
     .game-surface,
     .info-panel {
       padding: 12px;
       border-radius: 16px;
+      min-width: 0;
+      overflow: hidden;
     }
 
     .game-area {
       min-height: 280px;
       padding: 12px;
       gap: 12px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .reaction-hud {
       gap: 8px;
+      flex-wrap: wrap;
+      width: 100%;
     }
 
     .meter {
       height: 16px;
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+
+    .hud-stat {
+      min-width: 0;
+      flex-shrink: 0;
     }
 
     .current-speed {
       font-size: 1.2rem;
+      word-break: break-word;
     }
 
     .hud-stat span {
@@ -1323,15 +1395,24 @@ main.single-game-layout {
     .combo-badge {
       padding: 6px 12px;
       font-size: 0.85rem;
+      flex-shrink: 0;
     }
 
     .enemy-battle-area {
       padding: 12px;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .enemy-container {
+      min-width: 0;
+      width: 100%;
     }
 
     .enemy-character {
       width: 80px;
       height: 100px;
+      flex-shrink: 0;
     }
 
     .enemy-face {
@@ -1366,19 +1447,25 @@ main.single-game-layout {
 
     .enemy-hp-bar {
       height: 20px;
+      width: 100%;
+      max-width: 100%;
     }
 
     .enemy-hp-text {
       font-size: 0.7rem;
+      word-break: break-word;
     }
 
     .enemy-name {
       font-size: 0.75rem;
+      word-break: break-word;
     }
 
     .keypad-grid {
       grid-template-columns: repeat(5, 1fr);
       gap: 8px;
+      width: 100%;
+      min-width: 0;
     }
 
     .key-pill {
@@ -1389,6 +1476,12 @@ main.single-game-layout {
       display: flex;
       align-items: center;
       justify-content: center;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .key-pill strong {
+      word-break: break-word;
     }
 
     .primary,
@@ -1396,34 +1489,103 @@ main.single-game-layout {
       font-size: 0.9rem;
       padding: 12px 18px;
       min-height: 44px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .panel-head {
+      gap: 8px;
     }
 
     .panel-head h3 {
       font-size: 1.1rem;
+      word-break: break-word;
+    }
+
+    .score-row {
+      min-width: 0;
+      overflow: hidden;
     }
 
     .score-row strong {
       font-size: 1rem;
+      word-break: break-word;
     }
 
     .celebration-layer {
       padding: 12px 16px;
       inset: 8px;
+      min-width: 0;
+      overflow: hidden;
     }
 
     .celebration-title {
       font-size: 1rem;
+      word-break: break-word;
     }
 
     .celebration-sub {
       font-size: 0.8rem;
+      word-break: break-word;
+    }
+
+    .celebration-scores {
+      min-width: 0;
+      width: 100%;
     }
 
     .score-item {
       padding: 8px;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .score-item span,
+    .score-item strong {
+      word-break: break-word;
     }
 
     .score-item strong {
       font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    body {
+      padding: 6px;
+    }
+
+    .app-header h1 {
+      font-size: 1.3rem;
+    }
+
+    .game-surface,
+    .info-panel {
+      padding: 10px;
+    }
+
+    .game-area {
+      padding: 10px;
+      min-height: 260px;
+    }
+
+    .enemy-character {
+      width: 70px;
+      height: 90px;
+    }
+
+    .enemy-face {
+      width: 55px;
+      height: 55px;
+    }
+
+    .keypad-grid {
+      gap: 6px;
+    }
+
+    .key-pill {
+      padding: 12px 6px;
+      font-size: 1.2rem;
+      min-height: 48px;
     }
   }
